@@ -4,8 +4,12 @@ My Project of the Computer Networks Course Offered in Spring 2022 @ Zewail City.
 
 In Go-Back-N the sender is allowed to send multiple messages within a specified window without waiting for acknowledgement. The sender has two important parameters; the base which is the sequence number of the oldest unacknowledged packet and NextSeqNum which is the smallest unused sequence number (the next packet to be sent). Packets with ids in the interval [base, NextSeqNum - 1] are sent immediately. When the sender receives an acknowledgement from the receiver it slides its windows depending on the packet id of the acknowledgement packet (cumulative acknowledgement).
 
+=========================
+
 In this project, I implemented a transport protocol that provides some reliability services
 on top of the unreliable UDP. This is done by augmenting UDP with the GBN protocol.
+
+==========================
 
 The sender executes three types of events:
 1) When it is invoked to send data. It checks to see whether the window is full. If the window is not full. The packet is created and ready to be sent and variables are modified accordingly .
